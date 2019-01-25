@@ -1,0 +1,3 @@
+[run]
+source = mongo_pyramid_interview
+omit = mongo_pyramid_interview/test*

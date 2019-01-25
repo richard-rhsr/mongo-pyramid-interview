@@ -1,0 +1,121 @@
+@import url(//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700);
+body {
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  color: #ffffff;
+  background: #bc2131;
+}
+input, button {
+  color: #505050;
+  margin-bottom: 5px;
+  display: block;
+}
+
+    input:focus:required:invalid {background-color: pink; color: white;}
+    input:required:valid {background-color: white; color: black; }
+button {
+  margin-top: 15px;
+}
+legend {
+  color: #ffffff;
+  border-bottom: none;
+}
+label {
+  font-weight: 500;
+  display: block;
+  margin-top: 10px;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+}
+p {
+  font-weight: 300;
+}
+.font-normal {
+  font-weight: 400;
+}
+.font-semi-bold {
+  font-weight: 600;
+}
+.font-bold {
+  font-weight: 700;
+}
+.starter-template {
+  margin-top: 30px;
+}
+.content {
+  margin-left: 10px;
+}
+.content h1 {
+  margin-top: 10px;
+}
+h1 {
+  font-size: 4em;
+}
+h1 .smaller {
+  color: #f2b7bd;
+  font-size: 0.5em;
+}
+.smaller {
+  color: #f2b7bd;
+  font-size: 0.9em;
+}
+ul {
+  display: block;
+  padding: 0;
+  margin: 0;
+}
+ul li {
+  list-style: none;
+  margin: 0 10px;
+  font-size: 1.2em;
+}
+a, a:visited {
+  color: #f2b7bd;
+  text-decoration: underline;
+}
+a:hover, a:active {
+  color: #ffffff;
+  text-decoration: underline;
+}
+.icon {
+  color: #eb8b95;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+.icon {
+  color: #ffffff;
+}
+@media (max-width: 1199px) {
+  h1 {
+    font-size: 3em;
+  }
+}
+@media (max-width: 991px) {
+  .starter-template {
+    margin-top: 0;
+  }
+  .content {
+    margin-left: 0;
+    text-align: center;
+  }
+  h1 {
+    margin-bottom: 20px;
+  }
+}
+@media (max-width: 767px) {
+  h1 .smaller {
+    font-size: 25px;
+    display: block;
+  }
+  ul li {
+    display: block;
+    margin: 0;
+  }
+}

@@ -1,0 +1,22 @@
+{% extends "layout.jinja2" %}
+
+{% block content %}
+<div class="row">
+  <div class="col-md-12">
+    <p><i class="glyphicon glyphicon-triangle-right icon"></i><a href="{{videos_link}}">Videos Listing</a></p>
+    <div class="content">
+      <h1><span class="font-semi-bold">Video Themes</span> <span class="smaller">Summary</span></h1>
+      <ul style="list-style-type: none">
+      {% for theme in themes %}
+        <li>
+          <span class="theme_id">{{theme._id}}</span> <span class="smaller">has score</span> <span class="theme_score">{{theme.score}}</span>
+        </li>
+      {% else %}
+        <p>No videos entered yet!<br>
+        <a href="{{videos_link}}">Starting saving videos here</a></p>
+      {% endfor %}
+      </ul>
+    </div>
+  </div>
+</div>
+{% endblock content %}

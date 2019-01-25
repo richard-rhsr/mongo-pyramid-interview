@@ -1,0 +1,38 @@
+{% extends "layout.jinja2" %}
+
+{% block content %}
+<div class="row">
+  <div class="col-md-8">
+    <p><i class="glyphicon glyphicon-triangle-right icon"></i><a href="{{themes_link}}">Themes Summary</a></p>
+    <div class="content">
+      <h1><span class="font-semi-bold">Videos Listing</span></h1>
+      <ul style="list-style-type: none">
+      {% for video in videos %}
+        <li>
+          <a href="#" onclick="likeVideo(this, '{{video.name}}')"><span class="likes">{{video.likes}}</span><i class="glyphicon glyphicon-thumbs-up icon"></i></a>
+          <span class="name">{{video.name}}</span><span class="smaller"> about </span><span class="theme">{{video.theme}}</span>
+          <a href="#" onclick="dislikeVideo(this, '{{video.name}}')"><i class="glyphicon glyphicon-thumbs-down icon"></i><span class="dislikes">{{video.dislikes}}</span></a>
+        </li>
+      {% else %}
+        <p>No videos entered yet!</p>
+      {% endfor %}
+      </ul>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="content">
+      <form action="{{form_action}}" method="POST">
+        {% if error_message %}
+          <p>{{error_message}}</p> 
+        {% endif %}
+        <legend>Enter new video</legend>
+        <label for="video_name">Name: </label>
+        <input type="text" id="video_name" name="name" size="30" value="{{name_field}}" />
+        <label for="video_theme">Theme: </label>
+        <input type="text" id="video_theme" name="theme" size="30" value="{{theme_field}}" />
+        <button type="submit">Save</button>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock content %}
