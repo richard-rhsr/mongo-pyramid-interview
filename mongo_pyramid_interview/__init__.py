@@ -2,9 +2,6 @@ from pyramid.config import Configurator
 from pyramid.session import SignedCookieSessionFactory
 from urllib.parse import urlparse
 from pymongo import MongoClient
-# from gridfs import GridFS
-
-
 
 def main(global_config, **settings):
     """ This function returns a Pyramid WSGI application.
@@ -23,11 +20,7 @@ def main(global_config, **settings):
            db.authenticate(db_url.username, db_url.password)
         return db
 
-    # def add_fs(request):
-    #     return GridFS(request.db)
-
     config.add_request_method(add_db, 'db', reify=True)
-    # config.add_request_method(add_fs, 'fs', reify=True)
 
     session_factory = SignedCookieSessionFactory(settings['session_secret'])
     config.set_session_factory(session_factory)

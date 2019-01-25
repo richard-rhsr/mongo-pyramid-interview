@@ -10,9 +10,6 @@ input, button {
   margin-bottom: 5px;
   display: block;
 }
-
-    input:focus:required:invalid {background-color: pink; color: white;}
-    input:required:valid {background-color: white; color: black; }
 button {
   margin-top: 15px;
 }

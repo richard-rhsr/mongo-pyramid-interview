@@ -9,7 +9,16 @@
       <ul style="list-style-type: none">
       {% for theme in themes %}
         <li>
-          <span class="theme_id">{{theme._id}}</span> <span class="smaller">has score</span> <span class="theme_score">{{theme.score}}</span>
+          <span class="smaller">Theme </span>
+          {{theme._id}}
+          <span class="smaller"> has </span> 
+          {{theme.videos}}
+          <span class="smaller"> videos, with </span> 
+          {{theme.sum_likes}}
+          <span class="smaller"> likes, and </span> 
+          {{theme.sum_dislikes}}
+          <span class="smaller"> dislikes. It scores </span> 
+          {{theme.score}}
         </li>
       {% else %}
         <p>No videos entered yet!<br>

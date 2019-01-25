@@ -83,8 +83,8 @@ def dislike_video(request):
 @view_config(route_name='themes', renderer='../templates/list_themes.jinja2')
 def list_themes(request):
     pipeline = [
-        {'$group': {'_id': '$theme', 'sum_likes': {'$sum': '$likes'}, 'sum_dislikes': {'$sum': '$dislikes'}}},
-        {'$project': {'score': {'$subtract': ['$sum_likes', {'$divide': ['$sum_dislikes', 2]}]}}},
+        {'$group': {'_id': '$theme', 'sum_likes': {'$sum': '$likes'}, 'sum_dislikes': {'$sum': '$dislikes'}, 'videos': {'$sum': 1}}},
+        {'$project': {'sum_likes': 1, 'sum_dislikes': 1, 'videos': 1, 'score': {'$subtract': ['$sum_likes', {'$divide': ['$sum_dislikes', 2]}]}}},
         {'$sort': {'score': -1}}
     ]
     themes = request.db[collection_name].aggregate(pipeline)
