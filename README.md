@@ -12,11 +12,8 @@ Interview test
 - Upgrade packaging tools.
   `env/bin/pip install --upgrade pip setuptools`
 
-- Install the project in editable mode with its testing requirements.
-  `env/bin/pip install -e ".[testing]"`
-
-- Run your project's tests.
-  `env/bin/pytest`
+- Install the project in editable mode.
+  `env/bin/pip install -e .`
 
 - Run your project.
   `env/bin/pserve development.ini`
